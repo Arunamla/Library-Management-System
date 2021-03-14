@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Edit Sales Order</title>
+
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+
+<link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+<link th:href="@{/css/table.css}" rel="stylesheet" />
+
+
+</head>
+<body>
+	<div class="container">	
+		
+		<form class="form-signin" action="#" th:action="@{/save}" th:object="${book}"  enctype="multipart/form-data" method="post">
+			<h2 class="form-signin-heading">Create Book</h2>
+			<br/>
+			
+				<div class="form-group" style="display:none">
+					
+					<label for="inputBookId"  class="form-label">Id:</label> 
+						<input type="text" readonly="readonly" class="form-control" th:field="*{id}"  id="inputBookId"
+							aria-describedby="emailHelp" /> 
+					
+				</div>
+					
+					<div class="form-group">
+					
+					<label for="inputAuthorName"  class="form-label">Author Name:</label> 
+						<input type="text" class="form-control" th:field="*{authorName}"  id="inputAuthorName"
+							aria-describedby="emailHelp" /> 
+					
+				</div>
+				
+				<div class="form-group">
+					
+					<label for="inputPrice"  class="form-label">Book Name</label> 
+						<input type="text" class="form-control" th:field="*{bookName}"  id="inputBookName"
+							aria-describedby="emailHelp" /> 
+					
+				</div>
+				
+				<div class="form-group">
+					
+					<label for="inputPublisherName"  class="form-label">Publisher Name</label> 
+						<input type="text" class="form-control" th:field="*{publisherName}"  id="inputPublisherName"
+							aria-describedby="emailHelp" /> 
+					
+				</div>
+				
+				<div class="form-group">
+					
+					<label for="inputCategory"  class="form-label">Category</label> 
+						<input type="text" class="form-control" th:field="*{category}"  id="inputCategory"
+							aria-describedby="emailHelp" /> 
+					
+				</div>
+
+			<div class="form-group">
+				<label for="exampleFormControlFile1">Upload Book Image</label> <input
+					type="file" class="form-control-file" value="http://localhost:8080/12/bookImage" th:name="imagefile"
+					id="exampleFormControlFile1">
+			</div>
+
+
+			<button class="btn btn-primary btn-block" type="submit">Save</button>
+			
+		</form>
+	</div>
+</body>
+</html>
